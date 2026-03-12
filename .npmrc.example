@@ -1,0 +1,13 @@
+# npm 认证配置
+
+# 方法 1：使用环境变量（推荐）
+# 设置环境变量后，npm 会自动使用
+NPM_TOKEN=your_npm_access_token_here
+
+# 方法 2：使用 npm config
+# npm config set //registry.npmjs.org/:_authToken your_npm_access_token_here
+
+# 方法 3：发布时指定 token
+# npm publish --token your_npm_access_token_here
+
+# 创建 Token：https://www.npmjs.com/settings/tokens

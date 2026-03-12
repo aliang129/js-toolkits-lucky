@@ -1,0 +1,34 @@
+# Source files
+scripts/
+tests/
+docs/
+
+# Development files
+.eslintrc.js
+.prettierrc
+.eslint.config.js
+
+# Git files
+.git/
+.gitignore
+.husky/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node modules
+node_modules/
+
+# Misc
+index.js
+
+.npmrc
