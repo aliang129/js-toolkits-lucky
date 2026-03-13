@@ -556,3 +556,32 @@ export function flattenByString(arr) {
     .split(',')
     .map((item) => Number(item));
 }
+
+/**
+ * 按拼音首字母排序对象数组
+ * @param {Array<Object>} arr - 输入对象数组
+ * @param {string} key - 排序依据的属性名
+ * @returns {Array<Object>} 排序后的数组
+ * @example
+ * const users = [
+ *   { name: '张三', age: 25 },
+ *   { name: '李四', age: 30 },
+ *   { name: '王五', age: 28 },
+ *   { name: '赵六', age: 22 }
+ * ];
+ * const sorted = sortByPinyin(users, 'name');
+ * console.log(sorted);
+ * // [
+ * //   { name: '李四', age: 30 },
+ * //   { name: '王五', age: 28 },
+ * //   { name: '张三', age: 25 },
+ * //   { name: '赵六', age: 22 }
+ * // ]
+ */
+export function sortByPinyin(arr, key) {
+  return [...arr].sort((a, b) => {
+    const aValue = a[key];
+    const bValue = b[key];
+    return String(aValue).localeCompare(String(bValue), 'zh-CN');
+  });
+}

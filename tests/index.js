@@ -25,4 +25,3 @@ const users = [
   { id: 1, name: 'Alice' }
 ];
 const uniqueUsers = toolkit.array.uniqueByKey(users, 'id');
-

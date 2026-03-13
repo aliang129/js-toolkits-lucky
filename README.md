@@ -177,6 +177,35 @@ import { toUpperCase, toCamelCase } from 'js-toolkits-lucky/string';
 
 - `uniqueSorted(arr)` - 数组去重并排序
 - `shuffle(arr)` - 数组乱序（Fisher-Yates 洗牌算法）
+- `sortByPinyin(arr, key)` - 按拼音首字母排序对象数组
+
+**sortByPinyin 示例：**
+
+```javascript
+import { sortByPinyin } from 'js-toolkits-lucky/array';
+
+const users = [
+  { name: '张三', age: 25 },
+  { name: '李四', age: 30 },
+  { name: '王五', age: 28 },
+  { name: '赵六', age: 22 }
+];
+
+const sorted = sortByPinyin(users, 'name');
+console.log(sorted);
+// [
+//   { name: '李四', age: 30 },
+//   { name: '王五', age: 28 },
+//   { name: '张三', age: 25 },
+//   { name: '赵六', age: 22 }
+// ]
+```
+
+**特性：**
+- 使用 JavaScript 原生的 `localeCompare` 方法
+- 支持中文拼音排序
+- 自动处理不同数据类型（转换为字符串）
+- 不修改原数组，返回新数组
 - `sort(arr, compareFn)` - 数组排序
 
 #### 统计
