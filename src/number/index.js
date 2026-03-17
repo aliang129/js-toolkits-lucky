@@ -192,3 +192,30 @@ export function percentage(value, total) {
 export function formatThousands(num) {
   return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 }
+
+/**
+ * 数字相除并保留指定小数位数
+ * @param {number} divisor - 除数
+ * @param {number} dividend - 被除数
+ * @param {number} decimals - 保留的小数位数
+ * @returns {string} 保留指定小数位数的字符串（不够时补零）
+ * @example
+ * // 基本使用
+ * divideWithDecimals(10, 3, 2); // "3.33"
+ * divideWithDecimals(10, 3, 4); // "3.3333"
+ *
+ * // 补零
+ * divideWithDecimals(10, 4, 2); // "2.50"
+ * divideWithDecimals(10, 5, 3); // "2.000"
+ *
+ * // 整数结果
+ * divideWithDecimals(10, 2, 2); // "5.00"
+ */
+export function divideWithDecimals(divisor, dividend, decimals) {
+  if (dividend === 0) {
+    throw new Error('Division by zero is not allowed');
+  }
+
+  const result = divisor / dividend;
+  return result.toFixed(decimals);
+}

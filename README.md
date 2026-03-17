@@ -82,6 +82,30 @@ import { toUpperCase, toCamelCase } from 'js-toolkits-lucky/string';
 
 - `toFixed(num, decimals)` - 将数字格式化为指定小数位数
 - `formatThousands(num)` - 将数字转换为千分位格式
+- `divideWithDecimals(divisor, dividend, decimals)` - 数字相除并保留指定小数位数（不够时补零）
+
+**divideWithDecimals 示例：**
+
+```javascript
+import { divideWithDecimals } from 'js-toolkits-lucky/number';
+
+// 基本使用
+divideWithDecimals(10, 3, 2); // "3.33"
+divideWithDecimals(10, 3, 4); // "3.3333"
+
+// 补零
+divideWithDecimals(10, 4, 2); // "2.50"
+divideWithDecimals(10, 5, 3); // "2.000"
+
+// 整数结果
+divideWithDecimals(10, 2, 2); // "5.00"
+```
+
+**特性：**
+- 自动补零到指定小数位数
+- 返回字符串格式，方便显示
+- 除数为 0 时抛出错误
+- 支持循环小数（自动四舍五入）
 
 #### 类型检查
 
